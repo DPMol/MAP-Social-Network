@@ -6,9 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.LinkedHashSet;
-import java.util.Set;
-
 
 @Entity
 @Getter
@@ -23,9 +20,9 @@ public class User {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
     @Column(name = "first_name", nullable = false)
-    private String firstName;
+    private String firstname;
     @Column(name = "last_name", nullable = false)
-    private String lastName;
+    private String lastname;
     @Column(name = "password", nullable = false)
     private String password;
 }

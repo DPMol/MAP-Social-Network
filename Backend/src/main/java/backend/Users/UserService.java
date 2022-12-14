@@ -26,7 +26,7 @@ public class UserService extends AbstractService {
         if(userRepository.findById(request.getEmail()).isPresent()){
             throw new IllegalStateException(ErrorMessages.UserAlreadyExists);
         }
-        userRepository.save(new User(request.getEmail(), request.getFirstName(), request.getLastName(), request.getPassword()));
+        userRepository.save(new User(request.getEmail(), request.getFirstname(), request.getLastname(), request.getPassword()));
         return true;
     }
 

@@ -1,63 +1,61 @@
-package frontend.frontend;
+package frontend.frontend.Controllers;
 
-import javafx.event.ActionEvent;
+import frontend.frontend.HelloApplication;
+import frontend.frontend.Models.UserDetails;
+import frontend.frontend.Requests.LoginRequest;
+import frontend.frontend.StageService;
+import frontend.frontend.Utils.AuthenticatedUser;
+import frontend.frontend.Utils.Endpoints;
+import frontend.frontend.Utils.JsonConverter;
+import frontend.frontend.Utils.RequestDispatcher;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 
-public class LoginController {
+public class LoginController extends AbstractController{
 
     @FXML
-    private TextField emailLoginField;
+    private TextField email;
     @FXML
-    private PasswordField passwordLoginField;
+    private PasswordField password;
+
 
     @FXML
-    private GridPane defaultGridPane;
+    private void swap() throws IOException {
+        Parent registerNode = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("Views/RegisterView.fxml")));
+        var scene = new Scene(registerNode);
 
-    @FXML
-    private void logIn() throws IOException {
-//        String userName = emailLoginField.getText();
-//        String password = passwordLoginField.getText();
-        GridPane registerNode = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login-form.fxml")));
-        defaultGridPane.add(registerNode, 1, 2);
-//        User user = service.findUser(userName);
-//        if (user != null && user.getPassword().equals(password)) {
-//            mainAppStartUp(actionEvent, user);
-//        } else {
-//            Alert alert = new Alert(Alert.AlertType.ERROR);
-//            alert.setContentText("Username or password invalid!");
-//            alert.show();
-//        }
+        stageService.changeStage(scene);
     }
 
-//    private void mainAppStartUp(ActionEvent actionEvent, User user) throws IOException {
-//        Service.setCurrentLoggedUser(user);
-//        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("mainapp-view.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 700, 500);
-//        stage.setTitle("Welcome!");
-//        stage.setScene(scene);
-//        stage.show();
-//    }
-//
-//    @FXML
-//    private void signUpStartUp(ActionEvent actionEvent) throws IOException {
-//        Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("signup-view.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 700, 500);
-//        stage.setTitle("Sign up!");
-//        stage.setScene(scene);
-//        stage.show();
-//    }
+    @FXML
+    private void login() throws IOException{
+        String email = this.email.getText();
+        String password = this.password.getText();
+
+        //validate email + password
+
+        var request = new LoginRequest(email, password);
+
+        var result = RequestDispatcher.Post(request, UserDetails.class, Endpoints.Users + "login");
+
+        var user = AuthenticatedUser.getInstance();
+        user.setUser(result);
+
+        System.out.println(Objects.equals(result.toString(), user.getUser().toString()));
+    }
 }

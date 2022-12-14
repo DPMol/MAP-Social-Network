@@ -1,7 +1,6 @@
 package backend.Users.Models;
 
 import backend.Domain.User;
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,11 +14,11 @@ import java.util.List;
 @AllArgsConstructor
 public class UserDetails {
     private String email;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
 
     public static UserDetails FromUser(User user){
-        return new UserDetails(user.getEmail(), user.getFirstName(), user.getLastName());
+        return new UserDetails(user.getEmail(), user.getFirstname(), user.getLastname());
     }
 
     public static List<UserDetails> FromUsers(List<User> users){

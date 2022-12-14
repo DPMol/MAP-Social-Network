@@ -17,10 +17,10 @@ public final class RegisterUserRequest extends AbstractRequest {
     private final String email;
     @NotBlank
     @Size(min = 2)
-    private final String firstName;
+    private final String firstname;
     @NotBlank
     @Size(min = 2)
-    private final String lastName;
+    private final String lastname;
     @NotBlank
     @Size(min = 2)
     private final String password;
