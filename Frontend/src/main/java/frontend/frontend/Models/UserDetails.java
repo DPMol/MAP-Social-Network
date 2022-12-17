@@ -13,6 +13,9 @@ public class UserDetails {
         this.lastname = lastname;
     }
 
+    public UserDetails(){
+    }
+
     public int getId() {
         return Id;
     }

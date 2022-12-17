@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -12,65 +10,52 @@
    <children>
       <TabPane focusTraversable="false" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
-          <Tab text="Friends">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" styleClass="back">
+          <Tab onSelectionChanged="#populateFriends" text="Friends">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="473.0" styleClass="back">
                      <children>
-                        <ScrollPane hbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                            <content>
-                              <VBox fx:id="friendsBox" prefWidth="350.0" styleClass="box" />
+                              <VBox fx:id="friendsBox" alignment="BASELINE_LEFT" fillWidth="false" prefHeight="107.0" prefWidth="347.0" styleClass="box" />
                            </content>
                         </ScrollPane>
                      </children>
                   </AnchorPane>
-            </content>
+               </content>
           </Tab>
-          <Tab text="Pending">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="488.0" styleClass="back">
+          <Tab onSelectionChanged="#populatePending" text="Pending">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="473.0" styleClass="back">
                      <children>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                            <content>
-                              <VBox fx:id="pendingBox" prefWidth="350.0" styleClass="box" />
-                           </content></ScrollPane>
+                              <VBox fx:id="pendingBox" alignment="BASELINE_LEFT" fillWidth="false" prefHeight="107.0" prefWidth="347.0" styleClass="box" />
+                           </content>
+                        </ScrollPane>
                      </children>
                   </AnchorPane>
-            </content>
+               </content>
           </Tab>
-            <Tab text="Incoming">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="back">
+            <Tab onSelectionChanged="#populateIncoming" text="Incoming">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="473.0" styleClass="back">
                      <children>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                            <content>
-                              <VBox fx:id="incomingBox" prefWidth="350.0" styleClass="box" />
-                           </content></ScrollPane>
+                              <VBox fx:id="incomingBox" alignment="BASELINE_LEFT" fillWidth="false" prefHeight="107.0" prefWidth="347.0" styleClass="box" />
+                           </content>
+                        </ScrollPane>
                      </children>
                   </AnchorPane>
-              </content>
+               </content>
             </Tab>
-            <Tab text="Add">
+            <Tab onSelectionChanged="#populateAdd" text="Add">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="473.0" styleClass="back">
                      <children>
-                        <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                        <ScrollPane hbarPolicy="NEVER" layoutX="21.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
                            <content>
-                              <VBox fx:id="addBox" alignment="BASELINE_LEFT" fillWidth="false" prefHeight="107.0" prefWidth="347.0" styleClass="box">
-                                 <children>
-                                    <AnchorPane prefHeight="61.0" styleClass="anchor-pane" stylesheets="@../CssStyles/FriendElementStyle.css">
-                                       <children>
-                                          <Label fx:id="name" stylesheets="@../CssStyles/FriendElementStyle.css" text="Label" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
-                                          <Button fx:id="button" mnemonicParsing="false" onMouseClicked="#add" text="Add" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane prefHeight="61.0" prefWidth="315.0" styleClass="anchor-pane" stylesheets="@../CssStyles/FriendElementStyle.css">
-                                       <children>
-                                          <Label fx:id="name1" text="Label" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
-                                          <Button fx:id="button1" mnemonicParsing="false" onMouseClicked="#add" text="Add" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </VBox>
+                              <VBox fx:id="addBox" alignment="BASELINE_LEFT" fillWidth="false" prefHeight="107.0" prefWidth="347.0" styleClass="box" />
                            </content>
                         </ScrollPane>
                      </children>

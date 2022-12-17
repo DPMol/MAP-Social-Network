@@ -1,6 +1,5 @@
 package frontend.frontend.Controllers;
 
-import frontend.frontend.Requests.AddFriendRequest;
 import frontend.frontend.Requests.UnfriendRequest;
 import frontend.frontend.Utils.Endpoints;
 import frontend.frontend.Utils.RequestDispatcher;
@@ -9,9 +8,9 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-public class FriendElementController extends AbstractFriendElementController{
+public class FriendPendingController extends AbstractFriendElementController{
     @FXML
-    private void unfriend() throws IOException {
+    private void cancel() throws IOException {
         String sender = authenticatedUser.getUser().getEmail();
         String receiver = button.getParent().getId();
 

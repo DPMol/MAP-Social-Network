@@ -15,5 +15,5 @@ import lombok.NoArgsConstructor;
 public class GetAllPossibleFriendships extends AbstractRequest {
     @NotBlank
     @Pattern(regexp = RegEx.Email, message = ErrorMessages.InvalidEmail)
-    private String email;
+    private String user;
 }

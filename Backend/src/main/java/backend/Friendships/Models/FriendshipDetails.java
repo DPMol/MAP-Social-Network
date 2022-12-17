@@ -3,10 +3,7 @@ package backend.Friendships.Models;
 import backend.Domain.Friendship;
 import backend.Domain.User;
 import backend.Users.Models.UserDetails;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -18,6 +15,7 @@ import java.util.stream.Collectors;
 @Setter
 @ToString
 @AllArgsConstructor
+@EqualsAndHashCode
 public class FriendshipDetails {
     private UserDetails friend;
     private LocalDateTime createdDate;

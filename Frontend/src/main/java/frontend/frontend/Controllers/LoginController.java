@@ -57,5 +57,8 @@ public class LoginController extends AbstractController{
         user.setUser(result);
 
         System.out.println(Objects.equals(result.toString(), user.getUser().toString()));
+        Parent node = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("Views/FriendsView.fxml")));
+        var scene = new Scene(node);
+        stageService.changeStage(scene, false);
     }
 }

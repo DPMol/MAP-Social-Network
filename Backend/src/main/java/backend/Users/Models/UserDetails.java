@@ -1,10 +1,7 @@
 package backend.Users.Models;
 
 import backend.Domain.User;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
 
@@ -12,6 +9,7 @@ import java.util.List;
 @Setter
 @ToString
 @AllArgsConstructor
+@EqualsAndHashCode
 public class UserDetails {
     private String email;
     private String firstname;

@@ -93,11 +93,13 @@ public class FriendshipService extends AbstractService {
     }
 
     public List<UserDetails> handle(GetAllPossibleFriendships request) {
-        var user = getUser(request.getEmail());
+        var user = getUser(request.getUser());
 
         var friends = FriendshipDetails.FromFriendships(user, friendshipRepository.findAllFriendshipsByUser(user)).stream().map(FriendshipDetails::getFriend).toList();
+        System.out.println(friends);
         var users = UserDetails.FromUsers(userRepository.findAll());
+        System.out.println(users);
 
-        return users.stream().filter(friends::contains).collect(Collectors.toList());
+        return users.stream().filter(u -> !friends.contains(u) && !Objects.equals(u.getEmail(), request.getUser())).collect(Collectors.toList());
     }
 }

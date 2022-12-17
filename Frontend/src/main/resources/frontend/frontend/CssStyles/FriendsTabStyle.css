@@ -4,6 +4,7 @@
 
 .scroll-pane{
     -fx-background: #303030;
+    -fx-background-color: #303030;
     -fx-background-size: 0;
 }
 
@@ -31,8 +32,8 @@
 
 
 .box{
-    -fx-spacing: 5;
+    -fx-spacing: 7;
     -fx-fill-width: false;
-    -fx-alignment: center-left;
+    -fx-alignment: top-left;
     -fx-background-color: transparent;
 }

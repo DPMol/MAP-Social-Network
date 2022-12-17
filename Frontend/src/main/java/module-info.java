@@ -1,4 +1,4 @@
-module frontend.frontend {
+module frontend.frontend{
     requires javafx.controls;
     requires javafx.fxml;
     requires com.google.gson;
