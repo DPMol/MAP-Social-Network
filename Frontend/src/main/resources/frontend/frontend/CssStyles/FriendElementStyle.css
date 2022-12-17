@@ -1,0 +1,25 @@
+.anchor-pane{
+    -fx-background-color: #202020;
+    -fx-pref-height: 50;
+    -fx-pref-width: 320;
+    -fx-border-color: white transparent transparent white;
+}
+
+.label{
+    -fx-alignment: center-left;
+    -fx-font-size: 20;
+    -fx-text-fill: White;
+    -fx-pref-width: 170;
+}
+
+.button{
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-font-size: 20;
+    -fx-pref-width: 100;
+    -fx-pref-height: 60px;
+    -fx-padding: 0 0 5 0;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent white white transparent;
+}
+

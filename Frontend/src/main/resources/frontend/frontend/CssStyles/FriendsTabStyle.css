@@ -1,0 +1,38 @@
+.root{
+    -fx-background-color: #202020;
+}
+
+.scroll-pane{
+    -fx-background: #303030;
+    -fx-background-size: 0;
+}
+
+.back{
+    -fx-border-color: white transparent transparent transparent;
+    -fx-background-color: #303030;
+    -fx-alignment: center;
+}
+
+.tab{
+    -fx-background-color: #202020;
+    -fx-text-base-color: white;
+    -fx-border-radius: 0 0 0 0;
+}
+
+/*.tab:selected {*/
+/*    -fx-border-color: -fx-tab-border-color;*/
+/*    -fx-background-insets: 0, 1 1 0 1;*/
+/*    -fx-background-radius: 5 5 0 0, 4 4 0 0;*/
+/*}*/
+
+.tab-header-background{
+    -fx-background-color: #303030;
+}
+
+
+.box{
+    -fx-spacing: 5;
+    -fx-fill-width: false;
+    -fx-alignment: center-left;
+    -fx-background-color: transparent;
+}
