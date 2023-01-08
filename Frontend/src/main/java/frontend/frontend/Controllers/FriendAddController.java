@@ -1,18 +1,12 @@
 package frontend.frontend.Controllers;
 
-import frontend.frontend.HelloApplication;
 import frontend.frontend.Requests.AddFriendRequest;
 import frontend.frontend.Utils.Endpoints;
 import frontend.frontend.Utils.RequestDispatcher;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class FriendAddController extends AbstractFriendElementController{
     @FXML

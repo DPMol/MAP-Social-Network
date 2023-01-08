@@ -1,0 +1,36 @@
+.root{
+    -fx-background-color: #202020;
+}
+
+.text-field{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: transparent white white transparent;
+    -fx-border-width: 1;
+}
+
+.label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-family: "Ink Free";
+    -fx-font-size: 16;
+}
+
+.list-view{
+    -fx-background-color: #303030;
+    -fx-border-color: white transparent transparent white;
+
+}
+
+.list-cell{
+    -fx-background-color: #303030;
+    -fx-text-fill: white;
+    -fx-font-size: 16;
+}
+
+.button{
+    -fx-background-color: transparent;
+    -fx-font-family: "Ink Free";
+    -fx-text-fill: white;
+    -fx-border-color: transparent transparent white transparent;
+}

@@ -7,6 +7,15 @@ import javafx.stage.Stage;
 public class AuthenticatedUser {
     private static AuthenticatedUser instance;
     UserDetails user;
+    String friend;
+
+    public String getFriend() {
+        return friend;
+    }
+
+    public void setFriend(String friend) {
+        this.friend = friend;
+    }
 
     public UserDetails getUser() {
         return user;

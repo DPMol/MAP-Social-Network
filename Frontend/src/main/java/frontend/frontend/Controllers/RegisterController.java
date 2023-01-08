@@ -17,7 +17,6 @@ import java.util.Objects;
 
 public class RegisterController extends AbstractController{
 
-    private final StageService stageService = StageService.getInstance();
     @FXML
     private TextField email;
     @FXML

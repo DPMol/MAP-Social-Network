@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="61.0" prefWidth="350.0" styleClass="anchor-pane" stylesheets="@../CssStyles/FriendElementStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="frontend.frontend.Controllers.FriendElementController">
    <children>
-      <Label fx:id="name" text="Label" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
+      <Label fx:id="name" onMouseClicked="#chat" text="Label" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
       <Button fx:id="button" mnemonicParsing="false" onMouseClicked="#unfriend" text="Unfriend" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0" />
    </children>
 </AnchorPane>

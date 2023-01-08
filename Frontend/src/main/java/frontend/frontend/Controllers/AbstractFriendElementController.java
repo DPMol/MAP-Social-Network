@@ -5,8 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-public abstract class AbstractFriendElementController {
-    protected final AuthenticatedUser authenticatedUser = AuthenticatedUser.getInstance();
+public abstract class AbstractFriendElementController extends  AbstractController{
+
     @FXML
     protected Label name;
 

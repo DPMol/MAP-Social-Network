@@ -1,6 +1,5 @@
 package backend.Friendships;
 
-import backend.Domain.User;
 import backend.Friendships.FriendshipRequests.*;
 import backend.Friendships.Models.FriendshipDetails;
 import backend.Infrastructure.AbstractClasses.AbstractController;
